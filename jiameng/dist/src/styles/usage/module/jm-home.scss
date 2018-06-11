@@ -1,0 +1,61 @@
+#home{
+	height: 100%;
+	@include flexbox();
+	@include flex-direction(column);
+
+	>header{
+		height: .44rem;
+		background: $homeHeaderbg;
+		@include flexbox();
+		@include align-items(center);
+		@include justify-content(space-between);
+		padding: 0 .1rem;
+
+		span{
+			height: 100%;
+			img{
+				height: 100%;
+			}
+		}
+	}
+	main{
+		@include flex();
+		width: 100%; 
+		.home{
+			height: 100%;
+			width: 100%;
+		}
+	}
+	footer{
+		height: .5rem;
+		width: 100%;
+		background: #ffffff;
+		@include border(1px 0 0, #ccc);
+		@include flexbox();
+		@include align-items(center);
+
+		span{
+			height: 100%;
+			width: 33.333%;
+			padding: 6px 0 2px;
+			@include flexbox();
+			@include flex-direction(column);
+			@include align-items(center);
+			text-align: center;
+			img{
+				height: .24rem;
+				width: .24rem;
+			}
+			i{
+				font-size: 12px;
+				line-height: 18px;
+				color:#466a95;
+			}
+			.active{
+				color:#10b303;
+			}
+		}
+		
+	}
+
+}

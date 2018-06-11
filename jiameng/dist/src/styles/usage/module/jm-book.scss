@@ -1,0 +1,53 @@
+#book{
+	height: 100%;
+	background: #fff;
+
+	.header{
+		height: .44rem;
+		width: 100%;
+		background: #ffffff;
+		@include flexbox();
+		padding: .05rem;
+		span{
+			height: 100%;
+			img{
+				height: 100%;
+			}
+		}
+	}
+	section{
+		width: 100%;
+		
+		h3{
+			height: .36rem;
+			font-size: 14px;
+			color:#555;
+			background: #ebebeb;
+			line-height: .36rem;
+			padding:.05rem;
+		}
+		div{
+			height: .44rem;
+			width: 100%;
+			padding: .05rem;
+
+			@include flexbox();
+			@include align-items(center);
+			img{
+				height: 80%;
+			}
+			>span{
+				padding-left: .05rem;
+				font-size: 15px;
+				color:#333;
+				i{
+					color:#ccc;
+					padding: .02rem;
+				}
+				>span{
+					color: $backcolor;
+				}
+			}
+		}
+	}
+}

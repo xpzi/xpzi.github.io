@@ -1,0 +1,82 @@
+$backColor: #0eaa02;
+#login{
+	width: 100%;
+	height: 100%;
+	header{
+		@include justify-content( space-between );
+		height: 60px;
+		@include flexbox();
+		@include align-items(center);
+
+		div{
+			img{
+
+				width:50px;
+				height: 50px; 
+				margin-left: 10px;
+			}
+			span{
+				font-size: 24px;
+				color:$backColor;
+				line-height: 60px;
+				padding-right: 10px;
+			}
+		}
+		
+	}
+
+	.login{
+		width: 100%;
+
+		label{
+			width: 100%;
+			height: 40px;
+			background: #fff;
+			@include flexbox();
+			@include align-items(center);
+
+			img{
+				height: 24px;
+				width: 30px;
+			}
+			input{
+				@include flex();
+				height: 30px;
+				line-height: 30px;
+				font-size: 13px;
+				color: $backColor;
+				border: 0;
+				margin:0;
+				background: none;
+				outline: none;
+				padding: 0 10px;
+			}
+		}
+		button{
+			margin:8px auto;
+			display: block;
+			border:0;
+			padding:0;
+			height: 36px;
+			width:96%;
+			background: $backColor;
+			border-radius:5px;
+			color: #fff;		
+		}
+
+		.foot{
+			@include flexbox();
+			@include align-items(center);
+			@include justify-content( space-between);
+			padding: 0  10px;
+
+			.zhaomima{
+				color:$backColor;
+			}
+			.zhuce{
+				color:#d88d24;
+			}
+		}
+	}
+	
+}

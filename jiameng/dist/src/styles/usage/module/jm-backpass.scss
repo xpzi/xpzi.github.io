@@ -1,0 +1,100 @@
+#backPass{
+
+	background: #e7e9fb;
+
+	header{
+		height: .44rem;
+		@include flexbox();
+		@include align-items(center);
+		@include justify-content(space-between);
+		padding-right:.06rem;
+		background: #122236;
+
+		.back{
+			img{
+				height: .4rem;  
+			}
+		}
+		h3{
+			font-size: .14rem;
+			color: #fff;
+			font-weight: 100;
+			@include flex();
+			text-align: left;
+			padding-left: .05rem;
+		}
+		.next{
+			height: .32rem;
+			padding: 0 .1rem;
+			line-height: .32rem;
+			text-align: center;
+			font-size: 15px;
+			color:#fafafa;
+			background: #0eab02;
+			border-radius: .05rem;
+		}
+	}
+	
+	.fangshi{
+		h3{
+			height: .4rem;
+			line-height: .4rem;
+			color:#333;
+			padding:0 .06rem;
+		}
+		div{
+			height: 40px;
+			@include flexbox();
+			@include align-items(center);
+			@include justify-content(space-between);
+			padding: .06rem;
+			color:#555;
+			background: #fff;
+			@include border( 1px 0 0 , #cecece);
+
+			>i{
+				color:#e5ae62;
+			}
+			span{
+				i{
+					color:#0eab02;	
+					padding: 0 3px;
+				}
+			}
+			input{
+				@include flex();
+				border:0;
+				padding-left:10px;
+				color:#0eab02;	
+				font-size: 15px;
+			}
+			.ok{
+				color:#0eab02;
+			}
+		}
+	}
+	.tishi{
+		padding:5px;
+		h4{
+			height: .6rem;
+			width:100%;
+			line-height: .6rem;
+			color: #e5ae62;
+			font-size: 14px;
+		}
+		ul{
+			li{
+				padding: 5px 0;
+				i{
+					display: inline-block;
+				    height: 6px;
+				    width: 6px;
+				    background: #333;
+				    transform: rotate(45deg);
+				    margin: 0 5px 0 0;
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,28 @@
+#addmore{
+	.nav{
+		height: .44rem;
+		@include flexbox();
+		@include align-items(center);
+		padding-top: .03rem;
+		background: #213951;
+		>div{
+			@include flex();
+			@include flexbox();
+			@include flex-direction(column);
+			@include justify-content(center);
+			@include align-items(center);
+
+			text-align: center;
+			line-height: 18px;
+			font-size: 12px;
+			color:#7f97ba;
+			img{
+				width: .21rem;
+				height: .21rem;
+			}
+		}
+		.active{
+			color: $backcolor;
+		}
+	}
+}

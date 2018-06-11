@@ -1,0 +1,97 @@
+.code{
+    @include flexbox();
+    @include flex-direction(column);
+    height: 100%;
+    .search{
+        height: .44rem;
+        width: 100%;
+        padding:.06rem;
+        position: relative;
+        
+        label{
+            @include flexbox();
+            @include align-items(center);
+            background: #fff;
+            img{
+                height: 20px;
+                padding-left: .05rem;
+                vertical-align: sub;
+            }
+            input{
+                height: 30px;
+                line-height: 30px;
+                font-size: 10px;
+                color:#888;
+                border: 0;
+                padding-left:2px;
+            }
+        }
+    }
+    .con{
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+        .iscroll{
+            height: 100%;
+            overflow: hidden;
+        }
+        .letterList{
+            position: absolute;
+            padding-bottom:.1rem;
+            width:20px;
+            top: 0;
+            right:0;
+            z-index: 1;
+            height: 100%;
+//          background: rgba(100,100,100,0.5);
+            @include flexbox();
+            @include flex-direction( column);
+            text-align: center;
+            span{
+                @include flex();
+                @include flexbox();
+                @include align-items(center);
+                @include justify-content(center);
+                width: 100%;
+                color:#333;
+                font-weight: 600;
+                font-size: 16px;
+//              border-bottom: 1px solid #888;
+                
+            }
+        }
+    }
+   
+    .list{
+        padding-bottom: 1rem;
+        h5{
+            line-height: 28px;
+            height: 24px;
+            font-weight: 600;
+            padding-left:.1rem;
+        }
+        .active{
+            background: #00CCFF;
+        }
+        div{
+            height: 40px;
+            background: #FFFFFF;
+            @include border(1px 0 0, #cee1f7);
+            @include flexbox();
+            @include justify-content(space-between);
+            @include align-items(center);
+            padding:0 .20rem 0 .06rem;
+            
+            &:nth-child(1){
+                border: 0;
+            }
+            span{
+                color: #555;
+            }
+            
+            i{
+                color:$backcolor;
+            }
+        }
+    }
+}

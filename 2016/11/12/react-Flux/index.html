@@ -1,0 +1,473 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hello World | 小平子的故事</title>
+  <meta name="author" content="yjp">
+  
+  <meta name="description" content="react flux   todo_Listflux 是一种架构思想  简单说，Flux 是一种架构思想，专门解决软件的结构问题。它跟MVC 架构是同一类东西，但是更加简单和清晰
+Flux存在多种实现（至少15种），本文采用的是Facebook官方实现。
+flux的一种实现 react flux
+首">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Hello World"/>
+  <meta property="og:site_name" content="小平子的故事"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="小平子的故事" type="application/atom+xml">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<link rel="stylesheet" href="/css/style.css">
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-368771XX-X']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <header id="header" class='normal_mode'>
+    <nav id="main-nav">
+  <ul class='container'>
+    
+      <li><a href="/">主页</a></li>
+    
+      <li><a href="/archives">文章</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+  </header>
+  <div id="content" class="container">
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+      <time datetime="2016-11-12T08:39:29.665Z"><a href="/2016/11/12/react-Flux/">周六, 11月 12 2016, 4:39:29 下午</a></time>
+
+  
+    <h1 class="title">Hello World</h1>
+  
+
+
+
+<div class="clear"></div>
+      
+    </header>
+    <div class="entry">
+      
+        <h2 id="react-flux-todo-List"><a href="#react-flux-todo-List" class="headerlink" title="react flux   todo_List"></a>react flux   todo_List</h2><h4 id="flux-是一种架构思想"><a href="#flux-是一种架构思想" class="headerlink" title="flux 是一种架构思想"></a>flux 是一种架构思想</h4><p>  简单说，Flux 是一种架构思想，专门解决软件的结构问题。它跟MVC 架构是同一类东西，但是更加简单和清晰</p>
+<p>Flux存在多种实现（至少15种），本文采用的是Facebook官方实现。</p>
+<h4 id="flux的一种实现-react-flux"><a href="#flux的一种实现-react-flux" class="headerlink" title="flux的一种实现 react flux"></a>flux的一种实现 react flux</h4><ul>
+<li><p>首先看一张图片<br><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png" alt=""></p>
+<ul>
+<li><p>Flux将一个应用分成四个部分。</p>
+<pre><code>View： 视图层
+Action（动作）：视图层发出的消息（比如mouseClick）
+Dispatcher（派发器）：用来接收Actions、执行回调函数
+Store（数据层）：用来存放应用的状态，一旦发生变动，就提醒Views要更新页面
+</code></pre></li>
+<li><p>Flux 单向数据流  </p>
+<pre><code>view 视图层 显示交互
+Action    用户的交互事件
+dispatcher 调度员
+store  数据层
+</code></pre></li>
+</ul>
+</li>
+<li><p>其次看看 组件的生命周期</p>
+</li>
+<li>了解订阅发布模式更有利于理解</li>
+</ul>
+<h3 id="to-do-list"><a href="#to-do-list" class="headerlink" title="to do list"></a>to do list</h3><blockquote>
+<p>在这之前表示已经会基本的react</p>
+</blockquote>
+<ul>
+<li><p>app.js</p>
+<pre><code>&apos;use strict&apos;;
+import React from &apos;react&apos;;
+import ReactDOM from &apos;react-dom&apos;;
+
+import Todolist from &apos;./flux/components/todolistController.jsx&apos;;
+
+var app = document.getElementById(&apos;app&apos;);
+
+ReactDOM.render(
+    &lt;Todolist /&gt;,
+    app
+);
+
+if(  module.hot ){
+    module.hot.accept();
+}
+</code></pre></li>
+<li><p>todolistController.jsx</p>
+<pre><code>&apos;use strict&apos;;
+import React from &apos;react&apos;;
+
+import Todolist from &apos;./todulist.jsx&apos;;
+import Store from &apos;../stores/todolistStore.jsx&apos;;
+import Action from &apos;../actions/todolistActions.jsx&apos;;
+
+export default React.createClass({
+
+    // 生命周期函数  第一次加载才运行该方法
+    // 初始化的数据
+    getInitialState(){
+        return {
+            text: Store.getText(),
+            list: Store.getList()
+        }
+    },
+
+    // 必须的生命周期函数
+    // 视图渲染
+    render(){
+        return (
+            &lt;Todolist ref=&quot;todolist&quot; 
+                onTextvalue={this.changeTextValue} 
+                onEnterHandle={this.addlistItem} 
+                list={this.state.list} 
+                textvalue={this.state.text}  
+                onClick={this.delItem}
+            /&gt;
+        )
+    },
+
+    // 数据控制流传输 页面的 响应
+    // 删除一项
+    delItem( event) {
+        var index = event.target.dataset.index;
+        Action.todolist(&apos;DEL_ITEM&apos;, index);
+    },
+    // 添加一项 
+    addlistItem( event ){
+        if(event.keyCode == 13 ){
+            var text = event.target.value;
+            if( text != &apos;&apos; ){
+                Action.todolist(&apos;ADD_ITEM&apos;, text);
+                event.target.value = &apos;&apos;;
+            }
+        }
+    },
+    // 改变TextValue
+    changeTextValue( event ){
+        Action.todolist(&apos;change_textvale&apos;, event.target.value);
+    },
+    // TextVlaue被改变时 更新输入框 从而达到双向绑定
+    setNewValue( text ){
+        this.refs.todolist.refs.newItem.value= text;
+    },
+</code></pre></li>
+</ul>
+<pre><code>    // 生命周期函数 ，render之后
+    componentDidMount() {
+
+        // render之后才能更新的数据  实现数据双向绑定的一部分
+        this.setNewValue( this.state.text );
+
+        //  注册事件  将事件类型注册到 ， 通过在发在数据中注册过的事件，将数据更新到视图中
+        // 注册，方法就是用来实现 数据更新的，数据更新操做就是从数据（store）中传到view中，
+        //所以按照 flux架构思想 更新方法只能由store调用
+        Store.on( &apos;ADD_ITEM&apos;,  this._updataList);
+        Store.on( &apos;DEL_ITEM&apos;,  this._updataList);
+        Store.on( &apos;change_textvale&apos;,  this._updata_textvale);
+    },
+
+    // 更新list
+    _updataList(){
+        this.setState({
+            list: Store.getList()
+        });
+    },
+
+    // 更新textvalu
+    _updata_textvale(){
+        this.setState({
+            text: Store.getText()
+        });
+    },
+
+    // 生命周期函数 ，组件销毁之前
+    // 有必要 移除监听事件， 防止内存溢出
+    componentWillUnmount(){
+        Store.removeListener( &apos;ADD_ITEM&apos;,  this._updataList);
+        Store.removeListener( &apos;DEL_ITEM&apos;,  this._updataList);
+        Store.removeListener( &apos;change_textvale&apos;,  this._updata_textvale);
+    }
+});
+</code></pre><ul>
+<li><p>todoList.jsx</p>
+<pre><code>&apos;use strict&apos;;
+import React from &apos;react&apos;;
+
+export default React.createClass({
+    render(){
+        var that = this;
+        var listHtml = this.props.list.map((value, i  )=&gt;{
+            return (
+                &lt;li&gt;&lt;span&gt;{value}&lt;/span&gt;&lt;button onClick={this.props.onClick} data-index={i} &gt;X&lt;/button&gt;  &lt;/li&gt;
+            )
+        });
+
+        return (
+            &lt;div&gt;
+                &lt;div className=&quot;input&quot;&gt; 
+                    &lt;input type=&quot;text&quot; ref=&quot;newItem&quot; onChange={this.props.onTextvalue} onKeyUp={this.props.onEnterHandle} /&gt;&lt;br /&gt;
+                    &lt;p&gt;{this.props.textvalue}&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;ul&gt;
+                    {listHtml}
+                &lt;/ul&gt;
+            &lt;/div&gt;            
+        )
+    }
+});
+</code></pre></li>
+</ul>
+<ul>
+<li><p>todolistStore.jsx</p>
+<pre><code>// 使用 node 事件
+import { EventEmitter } from &apos;events&apos;;
+
+// 使用  es6 的方法  合并对象
+export default Object.assign({},EventEmitter.prototype, {
+    // 数据
+    data: {
+        list:[],
+        text: &apos;hello&apos;
+    },
+</code></pre></li>
+</ul>
+<pre><code>    // 读取数据
+    getList(){
+        return this.data.list;
+    },
+    getText(){
+        return this.data.text;
+    },
+
+
+    // 修改数据
+    addListItemHandler(text){
+        this.data.list.push(text);
+    },
+    delListItemHandler( id ){
+        this.data.list.splice(id, 1);
+    },
+    changeTextValueHandler( text ){
+        this.data.text = text;
+    }
+
+});
+</code></pre><ul>
+<li><p>todolistActios.jsx</p>
+<pre><code>// 这是什么情况呀  把数据传输到 Dispatcher中去了
+import Dispatcher from &apos;../dispatcher/todolistDispatcher.jsx&apos;;
+
+// 目前这里只做了简单的转发
+// 可以扩展功能，
+    // 新增方法，对action 分类管理
+    // 新增逻辑， 可做拦截什么的 数据转换什么的
+export default {
+    todolist( type, data ){
+        Dispatcher.dispatch({
+            actionType: type,
+            data: data
+        });
+    }
+
+}
+</code></pre></li>
+<li><p>todolistDispatcher.jsx</p>
+<pre><code>import { Dispatcher } from &apos;flux&apos;;
+import Store from &apos;../stores/todolistStore.jsx&apos;;
+
+let todolistDispactcher = new Dispatcher();
+
+// 通过事件类型 去改变相应的数据
+// 当然还可一拦截一些数据传输， 让它做另外的事情或不在继续了
+todolistDispactcher.register( (action) =&gt; {
+    switch( action.actionType ){
+        case &apos;ADD_ITEM&apos;:
+            Store.addListItemHandler( action.data );
+            break;
+        case &apos;DEL_ITEM&apos;:
+            Store.delListItemHandler( action.data );
+            break;
+        case &apos;change_textvale&apos;:
+            Store.changeTextValueHandler( action.data );
+            break;
+    }
+    // 这个么 用来更新视图的
+    // 不是所有的改变 都需要更新的化， 根据实际情况 改变位置
+    Store.emit(action.actionType);
+});
+export default todolistDispactcher;
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+          
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <span class="jiathis_txt">分享到：</span>
+  <a class="jiathis_button_weixin">微信</a>
+  <a class="jiathis_button_tsina">新浪微博</a>
+  <a class="jiathis_button_renren">人人网</a>
+  <a class="jiathis_button_qzone">QQ空间</a>
+  <a class="jiathis_button_douban">豆瓣</a>
+  <a class="jiathis_button_pocket">Pocket</a>
+  <a href="http://www.jiathis.com/share?uid=901656" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=901656" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+          <div class="clearfix"></div>
+          <nav id="pagination">
+  
+  
+    <a href="/2016/11/09/hello-world/" class="alignright next">Prev<i class="fa fa-long-arrow-right"></i></a>
+  
+  <div class="clearfix"></div>
+</nav>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Kommentare</h1>
+
+  
+      <!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread" data-thread-key="/2016/11/12/react-Flux/"></div>
+<!-- Duoshuo Comment END -->
+  
+</section>
+
+
+
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div>
+  
+  &copy; 2016 yjp
+  
+</div>
+Powered by <a href="http://zespia.tw/hexo/" title="Hexo" target="_blank" rel="external">Hexo</a> and <a href="http://pages.github.com/" title="GitHub Pages" target="_blank" rel="external">GitHub Pages</a>
+
+<div class="clearfix"></div></footer>
+  
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+
+
+
+    <script type="text/javascript">
+        (function(){
+
+            $(window).scroll(function(){
+
+                var scrollTop = $(window).scrollTop();
+                if ( scrollTop >200 ){
+                    $("#main-nav").removeClass('normal_mode').addClass('top_mode');
+                } else{
+                    $("#main-nav").removeClass('top_mode').addClass('normal_mode');
+                }
+
+            });
+
+        })();
+    </script>
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox({
+      'titlePosition': 'inside'
+    });
+  })(jQuery);
+  </script>
+
+
+
+    
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"yjp1918360798"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = 'http://static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+  
+  $(function(){
+
+    $('.title').hover(
+      function() {      
+        $(this).stop().animate(
+          {'marginLeft': '10px'}, 200
+        );   
+      }, 
+      function() {       
+        $(this).stop().animate({'marginLeft': '0px'}, 200);      
+      
+    });   
+
+  });
+
+</script>
+
+
+</body>
+</html>

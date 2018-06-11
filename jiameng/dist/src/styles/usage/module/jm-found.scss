@@ -1,0 +1,63 @@
+#found{
+	height:100%;
+
+	.header{
+		height: .6rem;
+		width: 100%;
+		background: #fff;
+		@include flexbox();
+		@include align-items(center);
+		padding: .08rem .1rem;
+		margin-bottom: .1rem;
+		span{
+			height: 100%;
+
+			&:nth-child(1){
+				img{
+					height: 100%;
+					border-radius: .05rem;
+				}
+			}
+			&:nth-child(2){
+				padding-left:.03rem;
+				h3{
+					color:#backcolor;
+					font-size: 15px;
+					font-weight: 100;
+					i{
+						color:#bbb;
+						padding-left: .1rem;
+					}
+				}
+				div{
+					font-size: 12px;
+					span{
+						color:#555;
+					}
+					i{
+						color: $backcolor_h;
+					}
+				}
+			}
+		}
+
+	}
+	.otherItem{
+		background: #fff;
+		div{
+			height: .4rem;
+			@include border(0 0 1px, #ccc);
+			@include flexbox();
+			@include align-items(center);
+			img{
+				height: .2rem;
+				padding:0 .1rem;
+			}
+			span{
+				color:#555;
+				font-size: .14rem;
+
+			}
+		}
+	}
+}

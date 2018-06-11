@@ -1,0 +1,155 @@
+#zhuce{
+    .hide{ visibility: hidden;}
+    .top{
+        height: 24px;
+        font-size: 10px;
+        color:#ff00fc;
+        text-align: center;
+        font-weight: 600;
+        line-height: 15px;
+    }
+    .button{
+        height: .44rem;
+        position: absolute;
+        width: .66rem;
+        background: none;
+        top: 0;
+        right: 5px;
+        z-index: 1000;
+    }
+    .dialog{
+        height:  .3rem;
+        line-height: .3rem;
+        background: rgba(0,0,0,0.5);
+        border-radius: .2rem;
+        width: 50%;
+        text-align: center;
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: #eee;
+        font-size: 12px;
+    }
+    .zhuce{
+        width: 100%;
+        background:#ffffff;
+        
+        >div{
+            height: .4rem;
+            @include border(1px 0 0, #ccc);
+            line-height: .4rem;
+            @include flexbox();
+            @include align-items(center);
+            color: #555;
+            font-size: 12px;
+            padding: 0 .05rem;
+            >span:nth-child(1){
+                font-weight: 600;
+                font-size: 12px;
+                color: #555;
+            }
+            &:nth-child(1){
+                span{
+                    &:nth-child(1){
+                        width: 30px;
+                    }
+                     &:nth-child(3){
+                         width: 65px;
+                         padding-right: .05rem;
+                     }
+                }
+                input{
+                    border:0;
+                    @include flex();
+                }
+            }
+            &:nth-child(2){
+                display: block;
+                span{
+                    i{vertical-align:sub; }
+                    padding: 0 .1rem;
+                    &:nth-child(1){
+                        padding: 0;
+                    }
+                    
+                }
+                .woman{
+                    color:#ff00fc;
+                    i{
+                        display: inline-block;
+                        width: 14px;
+                        height: 14px;
+                        border-radius: 100%;
+                        background:#ff00fc ;
+                    }
+                }
+                .woman_active{
+                    color:#ff00fc;
+                    i{
+                        width: 14px;
+                        height: 14px;
+                        display: inline-block;
+                        border: 2px solid #ff00fc;
+                        border-radius: 100%;
+                        background: #ffffff;
+                    }
+                }
+                .man {
+                    color:#53affe;
+                    i{
+                        display: inline-block;
+                        width: 14px;
+                        height: 14px;
+                        border-radius: 100%;
+                        background:#53affe ;
+                    }
+                }
+                .man_active{
+                    color:#53affe;
+                    i{
+                        width: 14px;
+                        height: 14px;
+                        display: inline-block;
+                        border: 2px solid #53affe;
+                        border-radius: 100%;    
+                        background: #ffffff;                   
+                    }
+                }
+                .info{
+                    padding: 0 5px;
+                    color:#e2a550;
+                    font-size: 12px;
+                    margin-left:-.1rem;
+                }
+            }
+            &:nth-child(3){
+                @include justify-content(space-between);
+                >span{
+                    &:last-child{
+                        color: $backcolor;
+                        flex: 0.3;
+                    }
+                }
+            },
+            &:nth-child(4),&:nth-child(5){
+                @include justify-content(space-between);
+                span{
+                    &:nth-child(2){
+                        @include flex();
+                        padding-left: .1rem;  
+                    }
+                    
+                    
+                    text-align: left;
+                    input{
+                        width: 100%;
+                        height: 30px;
+                        border: 0;
+                    }
+                }
+            }
+        }
+    }
+    
+}

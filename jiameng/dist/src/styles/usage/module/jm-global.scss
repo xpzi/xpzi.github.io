@@ -1,0 +1,342 @@
+
+
+
+/*  page 结构  */
+.__page{
+	width: 100%;
+	height: 100%;
+	@include flexbox();
+	@include flex-direction(column);
+
+	/*  page header  css  */
+	>header{
+		height: .44rem;
+		@include flexbox();
+		@include align-items(center);
+		@include justify-content(space-between);
+		padding-right:.06rem;
+		background: #122236;
+
+		.back{
+			img{
+				height: .4rem;  
+			}
+		}
+		h3{
+			font-size: .14rem;
+			color: #fff;
+			font-weight: 100;
+			@include flex();
+			text-align: left;
+			padding-left: .05rem;
+		}
+		.next{
+			height: .32rem;
+			padding: 0 .1rem;
+			line-height: .32rem;
+			text-align: center;
+			font-size: 15px;
+			color:#fafafa;
+			background: #0eab02;
+			border-radius: .05rem;
+		}
+	}
+
+	/*  page container  css  */
+	.container{
+		@include flex();
+		overflow: hidden;
+		width: 100%;
+
+		.type{
+			margin-top: .1rem;
+			width: 100%;
+			background: #fff;
+
+			.item{
+				height: 40px;
+				@include flexbox();
+				@include align-items(center);
+				@include border(0 0 1px 0, solid #ebebeb);
+				@include justify-content(space-between);
+
+				span{
+					padding: 0 .08rem;
+					height: 100%;
+					@include flexbox();
+					@include align-items(center);
+					font-family: "微软雅黑";
+
+					&:nth-child(1){
+						font-size:14px;
+						color: #000;
+    					
+    					i{
+    						font-size: 12px;
+    						color:#aaa;
+    						padding-left: .03rem;
+    					}
+    					input{
+    						border: 0;
+    						font-size: 14px;
+    						color: $backcolor;
+
+    					}
+					}
+					&:nth-child(2){
+						font-size:12px;
+						input{
+							border:0;
+							text-align: right;
+							color: $backcolor;
+							font-size: 14px;
+						}
+						em{
+							color: $backcolor;
+							padding-right:.05rem;
+						}
+						img{
+							height: 76%;
+							vertical-align: sub;
+							border-radius: .05rem;
+							@include border(1px, solid,#dadada);
+							background: #f2f3db;
+						}
+						.danxuan{
+							display: block;
+							height: 22px;
+							border-radius: 3px;
+							width: 50px;
+							padding: 1px 2px;
+							background: #ccc;
+							text-align: right;
+							i{
+								display: inline-block;
+								width: 22px;
+								height: 20px;
+								border-radius: 3px;
+								background: #fff;
+							}
+						}
+						.active{
+							text-align: left;
+							background: $backcolor;
+						}
+
+					}
+				}
+			}
+			.item::after{
+				border-color: #dadada;
+			}
+		}
+		
+		.mask{
+			background: rgba(0,0,0,0.6);
+
+			.copy{
+				height: 60px;
+				width: 70%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background: #fff;
+				border: 1px solid #111;
+				box-shadow: 0 0 5px #000;
+				text-align: left;
+				padding-left: .1rem;
+				font-weight: 600;
+				line-height: 60px;
+				font-size: 18px;
+				color:#333;
+			}
+			.dialog{
+				
+				background: #fff;
+				box-shadow: 0 0 1px #ccc;
+				min-width: 200px;
+				max-width: 90%;
+				
+				position: absolute;
+				top: 50%; 
+				left: 50%;
+				border-radius: .05rem;
+				transform: translate(-50%, -50%);
+
+				h3{
+					height: 40px;
+					line-height: 40px;
+					font-size: 16px;
+					color: $backcolor;
+					padding-left: .05rem;
+				}
+				>p{
+					color:$backcolor;
+					text-align: center;
+					font-size: 12px;
+					line-height: 16px;
+					padding:6px 0 4px;
+				}
+				>span{
+					@include flexbox();
+					@include align-items(center);
+					@include border( 1px 0 0 0, solid #cccccc);
+					>span{
+						@include flex();
+						height: 44px;
+						text-align: center;
+						line-height: 44px;
+						color:#555;
+						&:nth-child(1){
+							@include border( 0 1px  0 0, solid #cccccc);
+							&:after{
+								border-color:#ccc;
+							}
+						}
+					}
+					&:after{
+						border-color: #ccc;
+					}
+				}
+				>div{
+					height: 40px;
+					line-height: 40px;
+					padding: 0 .05rem;
+					width: 100%;
+					@include border(1px 0 0 0,  solid);
+					@include flexbox();
+					@include align-items(center);
+					@incldue justify-content(space-between);
+
+					>span{
+						&:nth-child(1){
+							@include flex();
+							font-size: 12px;
+							color: #333;
+						}
+						&:nth-child(2){
+							width: 20px;
+							height: 20px;
+							font-size: 12px;
+							text-align: center;
+							line-height: 16px;
+							border-radius: 50%;
+
+							img{
+								height: 100%;
+								width: 100%;
+							}
+						}
+					}
+					.yes{
+						background: $backcolor;
+						color: #fff;
+					}
+					.no{
+						background: #ccc;
+						color: #fafafa;
+					}
+					.version{
+						padding: 5px;
+					}
+				}
+				>div:after{
+					border-color: #bababa;
+				}
+			}
+		}
+		.prompt{
+			position: absolute;
+			font-size: 12px;
+			line-height: 16px;
+			padding: 8px;
+			min-width: 100px;
+			max-width: 90%;
+			top: 80%;
+			left: 50%;
+			transform: translateX(-50%);
+			background: rgba(10,10,10,0.9);
+			color:#fff;
+			border-radius: 40px;
+		}
+	}
+}
+
+.hei60{
+	height: 60px !important;
+}
+.backcolor1{
+	color: $backcolor_a !important;
+}
+.backcolor{
+	color: $backcolor !important;
+}
+.color-red{
+	color: red !important;
+}
+.none{
+	display: none !important;
+}
+.hide{
+	visibility: hidden !important;
+}
+.none_margin{
+	margin:0 !important;
+}
+
+/* majiapage  */
+#majianame{
+	.prompts{
+		text-align: center;
+		color: $backcolor_a;
+		line-height: 16px;
+		font-size: 12px;
+		padding-top: .01rem;
+	}
+}
+
+/*jiamengwallet  */
+#jiamengwallet{
+	.private{
+		color:$backcolor_a;
+		text-align: center;
+		padding-top: .1rem;
+	}
+}
+
+
+/*  updatapassword  */
+#updatapassword{
+	.wangjimima{
+		text-align: center;
+		height: 1.2rem;
+		padding-top: .6rem;
+		line-height: .6rem;
+		font-size: 12px;
+		color: $backcolor_a;
+		border-bottom: 2px solid #fff;
+	}
+	.tishi{
+		padding: .08rem;
+		h5{
+			color: $backcolor_a;
+			text-align: left;
+			font-weight: 100;
+			padding: 5px 0 15px;
+		}
+		p{
+			font-size: 12px;
+			color:#333;
+			line-height: 16px;
+			i{
+				display: inline-block;
+				width: 8px;
+				height: 8px;
+				background: #333;
+				transform: rotate(45deg);
+				padding-right: 2px;
+			}
+		}
+	}
+}

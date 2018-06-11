@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>react-flux todoList | 小平子的故事</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="react flux   todo Listflux 是一种架构思想  简单说，Flux 是一种架构思想，专门解决软件的结构问题。它跟MVC 架构是同一类东西，但是更加简单和清晰
+Flux存在多种实现（至少15种），本文采用的是Facebook官方实现。
+flux的一种实现 react flux
+首先看一张图片
+
+Flux将一个应用分成四个部分。1234View： 视图层Action（动作）：视图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-flux todoList">
+<meta property="og:url" content="http://yoursite.com/2016/11/12/react-flux-todoList/index.html">
+<meta property="og:site_name" content="小平子的故事">
+<meta property="og:description" content="react flux   todo Listflux 是一种架构思想  简单说，Flux 是一种架构思想，专门解决软件的结构问题。它跟MVC 架构是同一类东西，但是更加简单和清晰
+Flux存在多种实现（至少15种），本文采用的是Facebook官方实现。
+flux的一种实现 react flux
+首先看一张图片
+
+Flux将一个应用分成四个部分。1234View： 视图层Action（动作）：视图">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png">
+<meta property="og:updated_time" content="2016-11-12T09:18:03.299Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-flux todoList">
+<meta name="twitter:description" content="react flux   todo Listflux 是一种架构思想  简单说，Flux 是一种架构思想，专门解决软件的结构问题。它跟MVC 架构是同一类东西，但是更加简单和清晰
+Flux存在多种实现（至少15种），本文采用的是Facebook官方实现。
+flux的一种实现 react flux
+首先看一张图片
+
+Flux将一个应用分成四个部分。1234View： 视图层Action（动作）：视图">
+<meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png">
+  
+    <link rel="alternate" href="/atom.xml" title="小平子的故事" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小平子的故事</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">小平子的技术站</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">文章</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-react-flux-todoList" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/12/react-flux-todoList/" class="article-date">
+  <time datetime="2016-11-12T08:49:27.000Z" itemprop="datePublished">2016-11-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      react-flux todoList
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="react-flux-todo-List"><a href="#react-flux-todo-List" class="headerlink" title="react flux   todo List"></a>react flux   todo List</h2><h3 id="flux-是一种架构思想"><a href="#flux-是一种架构思想" class="headerlink" title="flux 是一种架构思想"></a>flux 是一种架构思想</h3><p>  简单说，Flux 是一种架构思想，专门解决软件的结构问题。它跟MVC 架构是同一类东西，但是更加简单和清晰</p>
+<p>Flux存在多种实现（至少15种），本文采用的是Facebook官方实现。</p>
+<h3 id="flux的一种实现-react-flux"><a href="#flux的一种实现-react-flux" class="headerlink" title="flux的一种实现 react flux"></a>flux的一种实现 react flux</h3><ul>
+<li><p>首先看一张图片<br><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png" alt=""></p>
+<ul>
+<li>Flux将一个应用分成四个部分。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">View： 视图层</div><div class="line">Action（动作）：视图层发出的消息（比如mouseClick）</div><div class="line">Dispatcher（派发器）：用来接收Actions、执行回调函数</div><div class="line">Store（数据层）：用来存放应用的状态，一旦发生变动，就提醒Views要更新页面</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Flux 单向数据流 </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">view 视图层 显示交互</div><div class="line">Action	用户的交互事件</div><div class="line">dispatcher 调度员</div><div class="line">store  数据层</div></pre></td></tr></table></figure>
+<ul>
+<li>其次看看 组件的生命周期</li>
+<li>了解订阅发布模式更有利于理解</li>
+</ul>
+<h2 id="to-do-list"><a href="#to-do-list" class="headerlink" title="to do list"></a>to do list</h2><p>》》》 在这之前表示已经会基本的react</p>
+<ul>
+<li>app.js</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="string">'use strict'</span>;</div><div class="line">import React from <span class="string">'react'</span>;</div><div class="line">import ReactDOM from <span class="string">'react-dom'</span>;</div><div class="line"></div><div class="line">import Todolist from <span class="string">'./flux/components/todolistController.jsx'</span>;</div><div class="line"></div><div class="line">var app = document.getElementById(<span class="string">'app'</span>);</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">	&lt;Todolist /&gt;,</div><div class="line">	app</div><div class="line">);</div><div class="line"></div><div class="line"><span class="keyword">if</span>(  module.hot )&#123;</div><div class="line">	module.hot.accept();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>todolistController.jsx</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> Todolist <span class="keyword">from</span> <span class="string">'./todulist.jsx'</span>;</div><div class="line"><span class="keyword">import</span> Store <span class="keyword">from</span> <span class="string">'../stores/todolistStore.jsx'</span>;</div><div class="line"><span class="keyword">import</span> Action <span class="keyword">from</span> <span class="string">'../actions/todolistActions.jsx'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.createClass(&#123;</div><div class="line">	</div><div class="line">	<span class="comment">// 生命周期函数  第一次加载才运行该方法</span></div><div class="line">	<span class="comment">// 初始化的数据</span></div><div class="line">	getInitialState()&#123;</div><div class="line">		<span class="keyword">return</span> &#123;</div><div class="line">			<span class="attr">text</span>: Store.getText(),</div><div class="line">			<span class="attr">list</span>: Store.getList()</div><div class="line">		&#125;</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	</div><div class="line">	<span class="comment">// 数据控制流传输 页面的 响应</span></div><div class="line">	<span class="comment">// 删除一项</span></div><div class="line">	delItem( event) &#123;</div><div class="line">		<span class="keyword">var</span> index = event.target.dataset.index;</div><div class="line">		Action.todolist(<span class="string">'DEL_ITEM'</span>, index);</div><div class="line">	&#125;,</div><div class="line">	<span class="comment">// 添加一项 </span></div><div class="line">	addlistItem( event )&#123;</div><div class="line">		<span class="keyword">if</span>(event.keyCode == <span class="number">13</span> )&#123;</div><div class="line">			<span class="keyword">var</span> text = event.target.value;</div><div class="line">			<span class="keyword">if</span>( text != <span class="string">''</span> )&#123;</div><div class="line">				Action.todolist(<span class="string">'ADD_ITEM'</span>, text);</div><div class="line">				event.target.value = <span class="string">''</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;,</div><div class="line">	<span class="comment">// 改变TextValue</span></div><div class="line">	changeTextValue( event )&#123;</div><div class="line">		Action.todolist(<span class="string">'change_textvale'</span>, event.target.value);</div><div class="line">	&#125;,</div><div class="line">	<span class="comment">// TextVlaue被改变时 更新输入框 从而达到双向绑定</span></div><div class="line">	setNewValue( text )&#123;</div><div class="line">		<span class="keyword">this</span>.refs.todolist.refs.newItem.value= text;</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	<span class="comment">// 生命周期函数 ，render之后</span></div><div class="line">	componentDidMount() &#123;</div><div class="line">		</div><div class="line">		<span class="comment">// render之后才能更新的数据  实现数据双向绑定的一部分</span></div><div class="line">		<span class="keyword">this</span>.setNewValue( <span class="keyword">this</span>.state.text );</div><div class="line">		</div><div class="line">		<span class="comment">//  注册事件  将事件类型注册到 ， 通过在发在数据中注册过的事件，将数据更新到视图中</span></div><div class="line">		<span class="comment">// 注册，方法就是用来实现 数据更新的，数据更新操做就是从数据（store）中传到view中，</span></div><div class="line">		<span class="comment">//所以按照 flux架构思想 更新方法只能由store调用</span></div><div class="line">		Store.on( <span class="string">'ADD_ITEM'</span>,  <span class="keyword">this</span>._updataList);</div><div class="line">		Store.on( <span class="string">'DEL_ITEM'</span>,  <span class="keyword">this</span>._updataList);</div><div class="line">		Store.on( <span class="string">'change_textvale'</span>,  <span class="keyword">this</span>._updata_textvale);</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	<span class="comment">// 更新list</span></div><div class="line">	_updataList()&#123;</div><div class="line">		<span class="keyword">this</span>.setState(&#123;</div><div class="line">			<span class="attr">list</span>: Store.getList()</div><div class="line">		&#125;);</div><div class="line">	&#125;,</div><div class="line"></div><div class="line">	<span class="comment">// 更新textvalu</span></div><div class="line">	_updata_textvale()&#123;</div><div class="line">		<span class="keyword">this</span>.setState(&#123;</div><div class="line">			<span class="attr">text</span>: Store.getText()</div><div class="line">		&#125;);</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	<span class="comment">// 生命周期函数 ，组件销毁之前</span></div><div class="line">	<span class="comment">// 有必要 移除监听事件， 防止内存溢出</span></div><div class="line">	componentWillUnmount()&#123;</div><div class="line">		Store.removeListener( <span class="string">'ADD_ITEM'</span>,  <span class="keyword">this</span>._updataList);</div><div class="line">		Store.removeListener( <span class="string">'DEL_ITEM'</span>,  <span class="keyword">this</span>._updataList);</div><div class="line">		Store.removeListener( <span class="string">'change_textvale'</span>,  <span class="keyword">this</span>._updata_textvale);</div><div class="line">	&#125;,</div><div class="line"></div><div class="line"></div><div class="line">	<span class="comment">// 必须的生命周期函数</span></div><div class="line">	<span class="comment">// 视图渲染</span></div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;Todolist ref="todolist" </div><div class="line">				onTextvalue=&#123;this.changeTextValue&#125; </div><div class="line">				onEnterHandle=&#123;this.addlistItem&#125; </div><div class="line">				list=&#123;this.state.list&#125; </div><div class="line">				textvalue=&#123;this.state.text&#125;  </div><div class="line">				onClick=&#123;this.delItem&#125;</div><div class="line">			/&gt;</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>todoList.jsx</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> React.createClass(&#123;</div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">		<span class="keyword">var</span> listHtml = <span class="keyword">this</span>.props.list.map(<span class="function">(<span class="params">value, i  </span>)=&gt;</span>&#123;</div><div class="line">			<span class="keyword">return</span> (</div><div class="line">				&lt;li&gt;&lt;span&gt;&#123;value&#125;&lt;/span&gt;&lt;button onClick=&#123;this.props.onClick&#125; data-index=&#123;i&#125; &gt;X&lt;/button&gt;  &lt;/li&gt;</div><div class="line">			)</div><div class="line">		&#125;);</div><div class="line">		</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			&lt;div&gt;</div><div class="line">				&lt;div className="input"&gt; </div><div class="line">					&lt;input type="text" ref="newItem" onChange=&#123;this.props.onTextvalue&#125; onKeyUp=&#123;this.props.onEnterHandle&#125; /&gt;&lt;br /&gt;</div><div class="line">					&lt;p&gt;&#123;this.props.textvalue&#125;&lt;/p&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">				&lt;ul&gt;</div><div class="line">					&#123;listHtml&#125;</div><div class="line">				&lt;/ul&gt;</div><div class="line">			&lt;/div&gt;			</div><div class="line">		)</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>todolistStore.jsx</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用 node 事件</span></div><div class="line"><span class="keyword">import</span> &#123; EventEmitter &#125; <span class="keyword">from</span> <span class="string">'events'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 使用  es6 的方法  合并对象</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="built_in">Object</span>.assign(&#123;&#125;,EventEmitter.prototype, &#123;</div><div class="line">	<span class="comment">// 数据</span></div><div class="line">	data: &#123;</div><div class="line">		<span class="attr">list</span>:[],</div><div class="line">		<span class="attr">text</span>: <span class="string">'hello'</span></div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	<span class="comment">// 读取数据</span></div><div class="line">	getList()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.data.list;</div><div class="line">	&#125;,</div><div class="line">	getText()&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.data.text;</div><div class="line">	&#125;,</div><div class="line">	</div><div class="line">	<span class="comment">// 修改数据</span></div><div class="line">	addListItemHandler(text)&#123;</div><div class="line">		<span class="keyword">this</span>.data.list.push(text);</div><div class="line">	&#125;,</div><div class="line">	delListItemHandler( id )&#123;</div><div class="line">		<span class="keyword">this</span>.data.list.splice(id, <span class="number">1</span>);</div><div class="line">	&#125;,</div><div class="line">	changeTextValueHandler( text )&#123;</div><div class="line">		<span class="keyword">this</span>.data.text = text;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>todolistActios.jsx</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这是什么情况呀  把数据传输到 Dispatcher中去了</span></div><div class="line"><span class="keyword">import</span> Dispatcher <span class="keyword">from</span> <span class="string">'../dispatcher/todolistDispatcher.jsx'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 目前这里只做了简单的转发</span></div><div class="line"><span class="comment">// 可以扩展功能，</span></div><div class="line">	<span class="comment">// 新增方法，对action 分类管理</span></div><div class="line">	<span class="comment">// 新增逻辑， 可做拦截什么的 数据转换什么的</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">	todolist( type, data )&#123;</div><div class="line">		Dispatcher.dispatch(&#123;</div><div class="line">			<span class="attr">actionType</span>: type,</div><div class="line">			<span class="attr">data</span>: data</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>todolistDispatcher.jsx</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Dispatcher &#125; <span class="keyword">from</span> <span class="string">'flux'</span>;</div><div class="line"><span class="keyword">import</span> Store <span class="keyword">from</span> <span class="string">'../stores/todolistStore.jsx'</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> todolistDispactcher = <span class="keyword">new</span> Dispatcher();</div><div class="line"></div><div class="line"><span class="comment">// 通过事件类型 去改变相应的数据</span></div><div class="line"><span class="comment">// 当然还可一拦截一些数据传输， 让它做另外的事情或不在继续了</span></div><div class="line">todolistDispactcher.register( <span class="function">(<span class="params">action</span>) =&gt;</span> &#123;</div><div class="line">	<span class="keyword">switch</span>( action.actionType )&#123;</div><div class="line">		<span class="keyword">case</span> <span class="string">'ADD_ITEM'</span>:</div><div class="line">			Store.addListItemHandler( action.data );</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">'DEL_ITEM'</span>:</div><div class="line">			Store.delListItemHandler( action.data );</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		<span class="keyword">case</span> <span class="string">'change_textvale'</span>:</div><div class="line">			Store.changeTextValueHandler( action.data );</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 这个么 用来更新视图的</span></div><div class="line">	<span class="comment">// 不是所有的改变 都需要更新的化， 根据实际情况 改变位置</span></div><div class="line">	Store.emit(action.actionType);</div><div class="line">&#125;);</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> todolistDispactcher;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/12/react-flux-todoList/" data-id="civez4roi0000pcfxw3bsxw2q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/12/reactNativeStart/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          reactNative 初体验
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/11/12/reactNativeStart/">reactNative 初体验</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/12/react-flux-todoList/">react-flux todoList</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/09/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 yjp<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">文章</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+#message{
+	height: 100%;
+	width: 100%;
+	@include flexbox();
+	@include flex-direction(column);
+	
+	.header{
+		height: .6rem;
+		width:100%;
+		background: #fff;
+		@include border(0 0 1px, #ccc);
+		@include flexbox();
+		@include align-items(center);
+		@include justify-content(space-between);
+		padding:.08rem;
+
+		span:nth-child(1){
+			height: 100%;
+			img{
+				height: 100%;
+			}
+			span{
+				font-size: 14px;
+				color:#555;
+			}
+		}
+		span:nth-child(2){
+			height: 100%;
+			position: relative;
+			img{
+				height: 70%;
+				margin-top:15%;
+				border-radius: .05rem;
+			}
+			i{
+				position: absolute;
+				display: block;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				top: -2px;
+				right: -2px;
+				background: red;
+			}
+		}
+	}
+
+}

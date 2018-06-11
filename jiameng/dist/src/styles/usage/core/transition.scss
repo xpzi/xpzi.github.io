@@ -1,0 +1,46 @@
+/*
+transition: 必须 始终保留在元素上面
+enter      进入开始
+leave :    离开结束
+*/
+
+.welcome-transition{
+	transition: all .1s ease;
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	overflow: hidden;
+}
+.welcome-enter,.welcome-leave{
+	opacity: 0;
+}
+
+.login-transition{
+	transition: all .2s ease;
+	height: 100%;
+	width: 100%;
+	opacity: 1;
+	overflow: hidden;
+}
+.login-leave{
+	opacity: 0;
+}
+
+.backpass-transition{
+	transition: all .2s ease;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: 999;
+}
+.backpass-enter{
+	/*top: -100%;*/
+	left: -100%;
+}
+.backpass-leave{
+	/*top: -100%;*/
+	left: -100%;
+}
